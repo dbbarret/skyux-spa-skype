@@ -1,0 +1,37 @@
+<app-nav></app-nav>
+<h1>About our Team</h1>
+<p>Please find our team member's information below.</p>
+<sky-alert alertType="info">
+  <strong>Note:</strong> There may be a delayed response.
+</sky-alert>
+
+<sky-card>
+  <sky-card-title>Large card</sky-card-title>
+  <sky-card-content>
+      This card demonstrates the amount of space that is available for a card that uses
+      the default large size. If the content does not require this much space, you can
+      set the card size to small. The type of content to display in the body of a card
+      varies based on what the card represents and whether it prompts users to action.
+      The content can consist of some combination of a graph, trend, status, summary
+      information, and guidance text.
+  </sky-card-content>
+  <sky-card-actions>
+      <button class="sky-btn sky-btn-default">Click me</button>
+  </sky-card-actions>
+</sky-card>
+<img src="~/assets/8biticon.png" alt="dataman">
+<div class="template-about-teams">
+  <div *ngFor="let member of team" class="template-about-team">
+    <sky-avatar [name]="member.name"></sky-avatar>
+    <sky-key-info [layout]="'horizontal'">
+      <sky-key-info-value>
+        {{ member.name }}
+      </sky-key-info-value>
+      <sky-key-info-label>
+        <a href="mailto:{{ member.email }}">
+          {{ member.email }}
+        </a>
+      </sky-key-info-label>
+    </sky-key-info>
+  </div>
+</div>
